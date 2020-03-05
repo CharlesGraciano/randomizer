@@ -4,99 +4,11 @@
     <meta charset="utf-8">
     <title>randomizer</title> <!-- put your net art project title here -->
     <link rel="stylesheet" type="text/css" href="main.css">
-    //<iframe src="https://editor.p5js.org/CharlesGraciano/embed/WWXihyIu"></iframe>
+    <script src="sketch.js"></script>
   </head>
-  <script>
-    // guitars I've owned
-
-//array
-let guitars = [{
-  name: "Gibson",
-  color: "ebony"
-}, {
-  name: "Fender",
-  color: "snow white"
-}, {
-  name: "Ibanez",
-  color: "natural satin"
-}, {
-  name: "Musicman",
-  color: "gold"
-}, {
-  name: "Epiphone",
-  color: "teaburst"
-}];
-
-let randomIndex;
-let animating = false;
-
-function setup() {
-  createCanvas(700, 200);
-  background(220);
-  textSize(36);
-
-  text("click to random");
-
-  //setTimeout(changeBackground, 1000);
-
-  //console.log(guitars[2].color);
-
-  // guitars[0] = "Gibson";
-  //guitars[1] = "Fender";
-  // guitars[2] = "Ibanez";
-  // guitars[3] = "Musicman";
-  // guitars[4] = "Epiphone"
-
-  // console.log("inital array is " + guitars);
-  // console.log(guitars)
-
-  // guitars.splice(4,1);
-  //console.log("array after splice");
-  //console.log(guitars);
-
-  //guitars.unshift("Rock");
-  //console.log("array after unshift");
-  //console.log(guitars);
-}
-
-function draw() {
-  if (animating == true) {
-    ellipse(random(width), random(height), random(50, 200));
-  }
-}
-
-//function changeBackground(){
-//  if (counter<= 5){
-//  counter++;
-//    console.log(counter);
-//  }
-//background(random(255),random(255),random(255));
-//setTimeout(changeBackground,1000);
-//} 
-function randomizer() {
-  animating = false;
-
-  if (guitars[0]) {
-    // this displays random name and splices it out of array
-    background(random(200, 255));
-    randomIndex = int(random(guitars.length));
-    // text('${guitars[randomIndex].name}'s best color is ${ guitars[randomIndex].color}', 100, 50);
-     text(guitars[randomIndex].name + "'s best color is " + guitars[randomIndex].color, 100, 50);
-    guitars.splice(randomIndex, 1);
-
-  } else {
-    background(random(200, 255));
-    text("ROCK ON!", 70, 100);
-  }
-}
-
-function mousePressed() {
-  animating = true;
-  setTimeout(randomizer, 2000);
-
-}
-  </script>
+  
       <body>
+         <button type="button" id="randButton">LET'S ROCK THIS JOINT!</button>
       <h3><a href="">page 2</a></h3>
       <h3><a href="">page 3</a></h3>
       </body>

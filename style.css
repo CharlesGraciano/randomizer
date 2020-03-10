@@ -10,3 +10,14 @@ canvas {
 padding: 20px;
 background-color:#5678; 
 }
+
+.row {
+  display: flex;
+
+}
+
+.column {
+
+  flex: 50%;
+
+}

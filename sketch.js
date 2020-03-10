@@ -1,5 +1,6 @@
 // guitars I've owned
 
+<<<<<<< HEAD
 
 let guitars = [{
   name: "Gibson",
@@ -17,12 +18,36 @@ let guitars = [{
   name: "Epiphone",
   color: "teaburst"
 }];
+=======
+//array
+let guitars = [];//{
+ // name: "Gibson",
+ // color: "ebony"
+//}, {
+ // name: "Fender",
+//  color: "snow white"
+//}, {
+//  name: "Ibanez",
+//  color: "natural satin"
+//}, {
+//  name: "Musicman",
+//  color: "gold"
+//}, {
+//  name: "Epiphone",
+//  color: "teaburst"
+//}];
+>>>>>>> 47e6d22cae00a97b7ed31130fe3ebed5e0ffd9d8
 
 let randomIndex;
 let animating = false;
 let guitar = [];
 let imageCounter = 0;
 let button;
+let addMoreButton;
+let cnv;
+let nameInputs = [];
+let firstTime = true;
+
 
 function preload() {
 
@@ -35,7 +60,9 @@ function preload() {
 
 
 function setup() {
-  createCanvas(700, 700);
+  cnv = createCanvas(700, 700);
+  cnv.parent("#canvasDiv");
+
   background(220);
   textSize(36);
   imageMode(CENTER);
@@ -43,12 +70,21 @@ function setup() {
 
   text("click to random");
 
+<<<<<<< HEAD
  
+=======
+
+>>>>>>> 47e6d22cae00a97b7ed31130fe3ebed5e0ffd9d8
   button = select('#randButton')
   button.mousePressed(buttonPressed);
-  button.class("randomizerButton");
-
-
+  
+  addMoreButton = select('#addMoreButton')
+  addMoreButton.mousePressed(addANotherInput);
+  //button.class("randomizerButton");
+  for (let i = 0; i < 3; i++) {
+    nameInputs.push(createInput());
+    nameInputs[nameInputs.length - 1].parent("#inputFields");
+  }
 }
 
 function draw() {
@@ -66,6 +102,11 @@ function draw() {
   }
 }
 
+function addAnotherInput(){
+  nameInputs.push(createInput());
+    nameInputs[nameInputs.length - 1].parent("#inputFields");
+
+}
 
 function randomizer() {
   animating = false;
@@ -74,10 +115,11 @@ function randomizer() {
 
     clear();
     randomIndex = int(random(guitars.length));
-  
+
 
     image(random(guitar), width / 2, height / 2);
-    text(guitars[randomIndex].name + "'s best color is " + guitars[randomIndex].color, 100, 50);
+    text(guitars[randomIndex],width / 2, height - 55);
+    //text(guitars[randomIndex].name + "'s best color is " + guitars[randomIndex].color, 100, 50);
     guitars.splice(randomIndex, 1);
 
   } else {
@@ -88,6 +130,17 @@ function randomizer() {
 }
 
 function buttonPressed() {
+  
+  if (firstTime == true)
+  for(let i = 0; i < nameInputs.length; i++){
+    guitars.push(nameInputs[i].value());
+  
+  } 
+  
+  firstTime == false;
+  
+  }
+  
   animating = true;
   setTimeout(randomizer, 2000);
 

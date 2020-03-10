@@ -1,43 +1,9 @@
 // guitars I've owned
 
-<<<<<<< HEAD
 
-let guitars = [{
-  name: "Gibson",
-  color: "ebony"
-}, {
-  name: "Fender",
-  color: "snow white"
-}, {
-  name: "Ibanez",
-  color: "natural satin"
-}, {
-  name: "Musicman",
-  color: "gold"
-}, {
-  name: "Epiphone",
-  color: "teaburst"
-}];
-=======
+
 //array
-let guitars = [];//{
- // name: "Gibson",
- // color: "ebony"
-//}, {
- // name: "Fender",
-//  color: "snow white"
-//}, {
-//  name: "Ibanez",
-//  color: "natural satin"
-//}, {
-//  name: "Musicman",
-//  color: "gold"
-//}, {
-//  name: "Epiphone",
-//  color: "teaburst"
-//}];
->>>>>>> 47e6d22cae00a97b7ed31130fe3ebed5e0ffd9d8
-
+let guitars = [];
 let randomIndex;
 let animating = false;
 let guitar = [];
@@ -70,16 +36,11 @@ function setup() {
 
   text("click to random");
 
-<<<<<<< HEAD
- 
-=======
-
->>>>>>> 47e6d22cae00a97b7ed31130fe3ebed5e0ffd9d8
   button = select('#randButton')
   button.mousePressed(buttonPressed);
   
   addMoreButton = select('#addMoreButton')
-  addMoreButton.mousePressed(addANotherInput);
+  addMoreButton.mousePressed(addAnotherInput);
   //button.class("randomizerButton");
   for (let i = 0; i < 3; i++) {
     nameInputs.push(createInput());
@@ -135,7 +96,7 @@ function buttonPressed() {
   for(let i = 0; i < nameInputs.length; i++){
     guitars.push(nameInputs[i].value());
   
-  } 
+   
   
   firstTime == false;
   

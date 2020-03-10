@@ -1,6 +1,6 @@
 // guitars I've owned
 
-//array
+
 let guitars = [{
   name: "Gibson",
   color: "ebony"
@@ -43,7 +43,7 @@ function setup() {
 
   text("click to random");
 
-  //button = createButton("LET'S ROCK THIS JOINT!");
+ 
   button = select('#randButton')
   button.mousePressed(buttonPressed);
   button.class("randomizerButton");
@@ -59,7 +59,7 @@ function draw() {
 
     if (imageCounter < guitar.length - 1) {
       imageCounter++;
-      //console.log(imageCounter);
+  
     } else {
       imageCounter = 0;
     }
